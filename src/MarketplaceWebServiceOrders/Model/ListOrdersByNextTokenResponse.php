@@ -1,26 +1,28 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 /**
  *  @see MarketplaceWebServiceOrders_Model
  */
-require_once ('MarketplaceWebServiceOrders/Model.php');  
 
-    
+require_once (dirname(__FILE__) . '/../Model.php');
+
 
 /**
  * MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse
@@ -30,88 +32,62 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * 
  * <li>ListOrdersByNextTokenResult: MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResult</li>
  * <li>ResponseMetadata: MarketplaceWebServiceOrders_Model_ResponseMetadata</li>
+ * <li>ResponseHeaderMetadata: MarketplaceWebServiceOrders_Model_ResponseHeaderMetadata</li>
  *
  * </ul>
- */ 
-class MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse extends MarketplaceWebServiceOrders_Model
-{
+ */
 
-    /**
-     * Construct new MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse
-     * 
-     * @param mixed $data DOMElement or Associative Array to construct from. 
-     * 
-     * Valid properties:
-     * <ul>
-     * 
-     * <li>ListOrdersByNextTokenResult: MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResult</li>
-     * <li>ResponseMetadata: MarketplaceWebServiceOrders_Model_ResponseMetadata</li>
-     *
-     * </ul>
-     */
+ class MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse extends MarketplaceWebServiceOrders_Model {
+
     public function __construct($data = null)
     {
-        $this->_fields = array (
-
-        'ListOrdersByNextTokenResult' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResult'),
-
-
-        'ResponseMetadata' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_ResponseMetadata'),
-
-        );
-        parent::__construct($data);
+    $this->_fields = array (
+    'ListOrdersByNextTokenResult' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResult'),
+    'ResponseMetadata' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_ResponseMetadata'),
+    'ResponseHeaderMetadata' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_ResponseHeaderMetadata'),
+    );
+    parent::__construct($data);
     }
 
-       
     /**
-     * Construct MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse from XML string
-     * 
-     * @param string $xml XML string to construct from
-     * @return MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse 
+     * Get the value of the ListOrdersByNextTokenResult property.
+     *
+     * @return ListOrdersByNextTokenResult ListOrdersByNextTokenResult.
      */
-    public static function fromXML($xml)
-    {
-        $dom = new DOMDocument();
-        $dom->loadXML($xml);
-        $xpath = new DOMXPath($dom);
-    	$xpath->registerNamespace('a', 'https://mws.amazonservices.com/Orders/2011-01-01');
-        $response = $xpath->query('//a:ListOrdersByNextTokenResponse');
-        if ($response->length == 1) {
-            return new MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse(($response->item(0))); 
-        } else {
-            throw new Exception ("Unable to construct MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse from provided XML. 
-                                  Make sure that ListOrdersByNextTokenResponse is a root element");
-        }
-          
-    }
-    
-    /**
-     * Gets the value of the ListOrdersByNextTokenResult.
-     * 
-     * @return ListOrdersByNextTokenResult ListOrdersByNextTokenResult
-     */
-    public function getListOrdersByNextTokenResult() 
+    public function getListOrdersByNextTokenResult()
     {
         return $this->_fields['ListOrdersByNextTokenResult']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ListOrdersByNextTokenResult.
-     * 
-     * @param ListOrdersByNextTokenResult ListOrdersByNextTokenResult
-     * @return void
+     * Set the value of the ListOrdersByNextTokenResult property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResult listOrdersByNextTokenResult
+     * @return this instance
      */
-    public function setListOrdersByNextTokenResult($value) 
+    public function setListOrdersByNextTokenResult($value)
     {
         $this->_fields['ListOrdersByNextTokenResult']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ListOrdersByNextTokenResult  and returns this instance
-     * 
-     * @param ListOrdersByNextTokenResult $value ListOrdersByNextTokenResult
-     * @return MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse instance
+     * Check to see if ListOrdersByNextTokenResult is set.
+     *
+     * @return true if ListOrdersByNextTokenResult is set.
+     */
+    public function isSetListOrdersByNextTokenResult()
+    {
+                return !is_null($this->_fields['ListOrdersByNextTokenResult']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ListOrdersByNextTokenResult, return this.
+     *
+     * @param listOrdersByNextTokenResult
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withListOrdersByNextTokenResult($value)
     {
@@ -119,45 +95,45 @@ class MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse extends Ma
         return $this;
     }
 
-
     /**
-     * Checks if ListOrdersByNextTokenResult  is set
-     * 
-     * @return bool true if ListOrdersByNextTokenResult property is set
+     * Get the value of the ResponseMetadata property.
+     *
+     * @return ResponseMetadata ResponseMetadata.
      */
-    public function isSetListOrdersByNextTokenResult()
-    {
-        return !is_null($this->_fields['ListOrdersByNextTokenResult']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ResponseMetadata.
-     * 
-     * @return ResponseMetadata ResponseMetadata
-     */
-    public function getResponseMetadata() 
+    public function getResponseMetadata()
     {
         return $this->_fields['ResponseMetadata']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ResponseMetadata.
-     * 
-     * @param ResponseMetadata ResponseMetadata
-     * @return void
+     * Set the value of the ResponseMetadata property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_ResponseMetadata responseMetadata
+     * @return this instance
      */
-    public function setResponseMetadata($value) 
+    public function setResponseMetadata($value)
     {
         $this->_fields['ResponseMetadata']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ResponseMetadata  and returns this instance
-     * 
-     * @param ResponseMetadata $value ResponseMetadata
-     * @return MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse instance
+     * Check to see if ResponseMetadata is set.
+     *
+     * @return true if ResponseMetadata is set.
+     */
+    public function isSetResponseMetadata()
+    {
+                return !is_null($this->_fields['ResponseMetadata']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ResponseMetadata, return this.
+     *
+     * @param responseMetadata
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withResponseMetadata($value)
     {
@@ -165,20 +141,72 @@ class MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse extends Ma
         return $this;
     }
 
-
     /**
-     * Checks if ResponseMetadata  is set
-     * 
-     * @return bool true if ResponseMetadata property is set
+     * Get the value of the ResponseHeaderMetadata property.
+     *
+     * @return ResponseHeaderMetadata ResponseHeaderMetadata.
      */
-    public function isSetResponseMetadata()
+    public function getResponseHeaderMetadata()
     {
-        return !is_null($this->_fields['ResponseMetadata']['FieldValue']);
-
+        return $this->_fields['ResponseHeaderMetadata']['FieldValue'];
     }
 
+    /**
+     * Set the value of the ResponseHeaderMetadata property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_ResponseHeaderMetadata responseHeaderMetadata
+     * @return this instance
+     */
+    public function setResponseHeaderMetadata($value)
+    {
+        $this->_fields['ResponseHeaderMetadata']['FieldValue'] = $value;
+        return $this;
+    }
 
+    /**
+     * Check to see if ResponseHeaderMetadata is set.
+     *
+     * @return true if ResponseHeaderMetadata is set.
+     */
+    public function isSetResponseHeaderMetadata()
+    {
+                return !is_null($this->_fields['ResponseHeaderMetadata']['FieldValue']);
+            }
 
+    /**
+     * Set the value of ResponseHeaderMetadata, return this.
+     *
+     * @param responseHeaderMetadata
+     *             The new value to set.
+     *
+     * @return This instance.
+     */
+    public function withResponseHeaderMetadata($value)
+    {
+        $this->setResponseHeaderMetadata($value);
+        return $this;
+    }
+    /**
+     * Construct MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse from XML string
+     * 
+     * @param $xml
+     *        XML string to construct from
+     *
+     * @return MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse 
+     */
+    public static function fromXML($xml)
+    {
+        $dom = new DOMDocument();
+        $dom->loadXML($xml);
+        $xpath = new DOMXPath($dom);
+        $response = $xpath->query("//*[local-name()='ListOrdersByNextTokenResponse']");
+        if ($response->length == 1) {
+            return new MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse(($response->item(0))); 
+        } else {
+            throw new Exception ("Unable to construct MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse from provided XML. 
+                                  Make sure that ListOrdersByNextTokenResponse is a root element");
+        }
+    }
     /**
      * XML Representation for this object
      * 
@@ -187,20 +215,10 @@ class MarketplaceWebServiceOrders_Model_ListOrdersByNextTokenResponse extends Ma
     public function toXML() 
     {
         $xml = "";
-        $xml .= "<ListOrdersByNextTokenResponse xmlns=\"https://mws.amazonservices.com/Orders/2011-01-01\">";
+        $xml .= "<ListOrdersByNextTokenResponse xmlns=\"https://mws.amazonservices.com/Orders/2013-09-01\">";
         $xml .= $this->_toXMLFragment();
         $xml .= "</ListOrdersByNextTokenResponse>";
         return $xml;
-    }
-
-    private $_responseHeaderMetadata = null;
-
-    public function getResponseHeaderMetadata() {
-        return $this->_responseHeaderMetadata;
-    }
-
-    public function setResponseHeaderMetadata($responseHeaderMetadata) {
-        return $this->_responseHeaderMetadata = $responseHeaderMetadata;
     }
 
 }

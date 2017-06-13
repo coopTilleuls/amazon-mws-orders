@@ -25,69 +25,69 @@ require_once (dirname(__FILE__) . '/../Model.php');
 
 
 /**
- * MarketplaceWebServiceOrders_Model_ResponseMetadata
+ * MarketplaceWebServiceOrders_Model_BuyerCustomizedInfoDetail
  * 
  * Properties:
  * <ul>
  * 
- * <li>RequestId: string</li>
+ * <li>CustomizedURL: string</li>
  *
  * </ul>
  */
 
- class MarketplaceWebServiceOrders_Model_ResponseMetadata extends MarketplaceWebServiceOrders_Model {
+ class MarketplaceWebServiceOrders_Model_BuyerCustomizedInfoDetail extends MarketplaceWebServiceOrders_Model {
 
     public function __construct($data = null)
     {
     $this->_fields = array (
-    'RequestId' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'CustomizedURL' => array('FieldValue' => null, 'FieldType' => 'string'),
     );
     parent::__construct($data);
     }
 
     /**
-     * Get the value of the RequestId property.
+     * Get the value of the CustomizedURL property.
      *
-     * @return String RequestId.
+     * @return String CustomizedURL.
      */
-    public function getRequestId()
+    public function getCustomizedURL()
     {
-        return $this->_fields['RequestId']['FieldValue'];
+        return $this->_fields['CustomizedURL']['FieldValue'];
     }
 
     /**
-     * Set the value of the RequestId property.
+     * Set the value of the CustomizedURL property.
      *
-     * @param string requestId
+     * @param string customizedURL
      * @return this instance
      */
-    public function setRequestId($value)
+    public function setCustomizedURL($value)
     {
-        $this->_fields['RequestId']['FieldValue'] = $value;
+        $this->_fields['CustomizedURL']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Check to see if RequestId is set.
+     * Check to see if CustomizedURL is set.
      *
-     * @return true if RequestId is set.
+     * @return true if CustomizedURL is set.
      */
-    public function isSetRequestId()
+    public function isSetCustomizedURL()
     {
-                return !is_null($this->_fields['RequestId']['FieldValue']);
+                return !is_null($this->_fields['CustomizedURL']['FieldValue']);
             }
 
     /**
-     * Set the value of RequestId, return this.
+     * Set the value of CustomizedURL, return this.
      *
-     * @param requestId
+     * @param customizedURL
      *             The new value to set.
      *
      * @return This instance.
      */
-    public function withRequestId($value)
+    public function withCustomizedURL($value)
     {
-        $this->setRequestId($value);
+        $this->setCustomizedURL($value);
         return $this;
     }
 

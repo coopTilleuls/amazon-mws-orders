@@ -25,117 +25,117 @@ require_once (dirname(__FILE__) . '/../Model.php');
 
 
 /**
- * MarketplaceWebServiceOrders_Model_Message
+ * MarketplaceWebServiceOrders_Model_TaxClassification
  * 
  * Properties:
  * <ul>
  * 
- * <li>Locale: string</li>
- * <li>Text: string</li>
+ * <li>Name: string</li>
+ * <li>Value: string</li>
  *
  * </ul>
  */
 
- class MarketplaceWebServiceOrders_Model_Message extends MarketplaceWebServiceOrders_Model {
+ class MarketplaceWebServiceOrders_Model_TaxClassification extends MarketplaceWebServiceOrders_Model {
 
     public function __construct($data = null)
     {
     $this->_fields = array (
-    'Locale' => array('FieldValue' => null, 'FieldType' => 'string'),
-    'Text' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Name' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Value' => array('FieldValue' => null, 'FieldType' => 'string'),
     );
     parent::__construct($data);
     }
 
     /**
-     * Get the value of the Locale property.
+     * Get the value of the Name property.
      *
-     * @return String Locale.
+     * @return String Name.
      */
-    public function getLocale()
+    public function getName()
     {
-        return $this->_fields['Locale']['FieldValue'];
+        return $this->_fields['Name']['FieldValue'];
     }
 
     /**
-     * Set the value of the Locale property.
+     * Set the value of the Name property.
      *
-     * @param string locale
+     * @param string name
      * @return this instance
      */
-    public function setLocale($value)
+    public function setName($value)
     {
-        $this->_fields['Locale']['FieldValue'] = $value;
+        $this->_fields['Name']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Check to see if Locale is set.
+     * Check to see if Name is set.
      *
-     * @return true if Locale is set.
+     * @return true if Name is set.
      */
-    public function isSetLocale()
+    public function isSetName()
     {
-                return !is_null($this->_fields['Locale']['FieldValue']);
+                return !is_null($this->_fields['Name']['FieldValue']);
             }
 
     /**
-     * Set the value of Locale, return this.
+     * Set the value of Name, return this.
      *
-     * @param locale
+     * @param name
      *             The new value to set.
      *
      * @return This instance.
      */
-    public function withLocale($value)
+    public function withName($value)
     {
-        $this->setLocale($value);
+        $this->setName($value);
         return $this;
     }
 
     /**
-     * Get the value of the Text property.
+     * Get the value of the Value property.
      *
-     * @return String Text.
+     * @return String Value.
      */
-    public function getText()
+    public function getValue()
     {
-        return $this->_fields['Text']['FieldValue'];
+        return $this->_fields['Value']['FieldValue'];
     }
 
     /**
-     * Set the value of the Text property.
+     * Set the value of the Value property.
      *
-     * @param string text
+     * @param string value
      * @return this instance
      */
-    public function setText($value)
+    public function setValue($value)
     {
-        $this->_fields['Text']['FieldValue'] = $value;
+        $this->_fields['Value']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Check to see if Text is set.
+     * Check to see if Value is set.
      *
-     * @return true if Text is set.
+     * @return true if Value is set.
      */
-    public function isSetText()
+    public function isSetValue()
     {
-                return !is_null($this->_fields['Text']['FieldValue']);
+                return !is_null($this->_fields['Value']['FieldValue']);
             }
 
     /**
-     * Set the value of Text, return this.
+     * Set the value of Value, return this.
      *
-     * @param text
+     * @param value
      *             The new value to set.
      *
      * @return This instance.
      */
-    public function withText($value)
+    public function withValue($value)
     {
-        $this->setText($value);
+        $this->setValue($value);
         return $this;
     }
 

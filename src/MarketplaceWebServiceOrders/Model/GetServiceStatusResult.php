@@ -1,26 +1,28 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 /**
  *  @see MarketplaceWebServiceOrders_Model
  */
-require_once ('MarketplaceWebServiceOrders/Model.php');  
 
-    
+require_once (dirname(__FILE__) . '/../Model.php');
+
 
 /**
  * MarketplaceWebServiceOrders_Model_GetServiceStatusResult
@@ -28,71 +30,66 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * Properties:
  * <ul>
  * 
- * <li>Status: ServiceStatusEnum</li>
+ * <li>Status: string</li>
  * <li>Timestamp: string</li>
  * <li>MessageId: string</li>
- * <li>Messages: MarketplaceWebServiceOrders_Model_MessageList</li>
+ * <li>Messages: array</li>
  *
  * </ul>
- */ 
-class MarketplaceWebServiceOrders_Model_GetServiceStatusResult extends MarketplaceWebServiceOrders_Model
-{
+ */
 
-    /**
-     * Construct new MarketplaceWebServiceOrders_Model_GetServiceStatusResult
-     * 
-     * @param mixed $data DOMElement or Associative Array to construct from. 
-     * 
-     * Valid properties:
-     * <ul>
-     * 
-     * <li>Status: ServiceStatusEnum</li>
-     * <li>Timestamp: string</li>
-     * <li>MessageId: string</li>
-     * <li>Messages: MarketplaceWebServiceOrders_Model_MessageList</li>
-     *
-     * </ul>
-     */
+ class MarketplaceWebServiceOrders_Model_GetServiceStatusResult extends MarketplaceWebServiceOrders_Model {
+
     public function __construct($data = null)
     {
-        $this->_fields = array (
-        'Status' => array('FieldValue' => null, 'FieldType' => 'ServiceStatusEnum'),
-        'Timestamp' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'MessageId' => array('FieldValue' => null, 'FieldType' => 'string'),
-
-        'Messages' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_MessageList'),
-
-        );
-        parent::__construct($data);
+    $this->_fields = array (
+    'Status' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Timestamp' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'MessageId' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Messages' => array('FieldValue' => array(), 'FieldType' => array('MarketplaceWebServiceOrders_Model_Message'), 'ListMemberName' => 'Message'),
+    );
+    parent::__construct($data);
     }
 
-        /**
-     * Gets the value of the Status property.
-     * 
-     * @return ServiceStatusEnum Status
+    /**
+     * Get the value of the Status property.
+     *
+     * @return String Status.
      */
-    public function getStatus() 
+    public function getStatus()
     {
         return $this->_fields['Status']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Status property.
-     * 
-     * @param ServiceStatusEnum Status
+     * Set the value of the Status property.
+     *
+     * @param string status
      * @return this instance
      */
-    public function setStatus($value) 
+    public function setStatus($value)
     {
         $this->_fields['Status']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Status and returns this instance
-     * 
-     * @param ServiceStatusEnum $value Status
-     * @return MarketplaceWebServiceOrders_Model_GetServiceStatusResult instance
+     * Check to see if Status is set.
+     *
+     * @return true if Status is set.
+     */
+    public function isSetStatus()
+    {
+                return !is_null($this->_fields['Status']['FieldValue']);
+            }
+
+    /**
+     * Set the value of Status, return this.
+     *
+     * @param status
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withStatus($value)
     {
@@ -100,44 +97,45 @@ class MarketplaceWebServiceOrders_Model_GetServiceStatusResult extends Marketpla
         return $this;
     }
 
-
     /**
-     * Checks if Status is set
-     * 
-     * @return bool true if Status  is set
+     * Get the value of the Timestamp property.
+     *
+     * @return XMLGregorianCalendar Timestamp.
      */
-    public function isSetStatus()
-    {
-        return !is_null($this->_fields['Status']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the Timestamp property.
-     * 
-     * @return string Timestamp
-     */
-    public function getTimestamp() 
+    public function getTimestamp()
     {
         return $this->_fields['Timestamp']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Timestamp property.
-     * 
-     * @param string Timestamp
+     * Set the value of the Timestamp property.
+     *
+     * @param string timestamp
      * @return this instance
      */
-    public function setTimestamp($value) 
+    public function setTimestamp($value)
     {
         $this->_fields['Timestamp']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Timestamp and returns this instance
-     * 
-     * @param string $value Timestamp
-     * @return MarketplaceWebServiceOrders_Model_GetServiceStatusResult instance
+     * Check to see if Timestamp is set.
+     *
+     * @return true if Timestamp is set.
+     */
+    public function isSetTimestamp()
+    {
+                return !is_null($this->_fields['Timestamp']['FieldValue']);
+            }
+
+    /**
+     * Set the value of Timestamp, return this.
+     *
+     * @param timestamp
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withTimestamp($value)
     {
@@ -145,44 +143,45 @@ class MarketplaceWebServiceOrders_Model_GetServiceStatusResult extends Marketpla
         return $this;
     }
 
-
     /**
-     * Checks if Timestamp is set
-     * 
-     * @return bool true if Timestamp  is set
+     * Get the value of the MessageId property.
+     *
+     * @return String MessageId.
      */
-    public function isSetTimestamp()
-    {
-        return !is_null($this->_fields['Timestamp']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the MessageId property.
-     * 
-     * @return string MessageId
-     */
-    public function getMessageId() 
+    public function getMessageId()
     {
         return $this->_fields['MessageId']['FieldValue'];
     }
 
     /**
-     * Sets the value of the MessageId property.
-     * 
-     * @param string MessageId
+     * Set the value of the MessageId property.
+     *
+     * @param string messageId
      * @return this instance
      */
-    public function setMessageId($value) 
+    public function setMessageId($value)
     {
         $this->_fields['MessageId']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the MessageId and returns this instance
-     * 
-     * @param string $value MessageId
-     * @return MarketplaceWebServiceOrders_Model_GetServiceStatusResult instance
+     * Check to see if MessageId is set.
+     *
+     * @return true if MessageId is set.
+     */
+    public function isSetMessageId()
+    {
+                return !is_null($this->_fields['MessageId']['FieldValue']);
+            }
+
+    /**
+     * Set the value of MessageId, return this.
+     *
+     * @param messageId
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withMessageId($value)
     {
@@ -190,64 +189,68 @@ class MarketplaceWebServiceOrders_Model_GetServiceStatusResult extends Marketpla
         return $this;
     }
 
-
     /**
-     * Checks if MessageId is set
-     * 
-     * @return bool true if MessageId  is set
+     * Get the value of the Messages property.
+     *
+     * @return List<Message> Messages.
      */
-    public function isSetMessageId()
+    public function getMessages()
     {
-        return !is_null($this->_fields['MessageId']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the Messages.
-     * 
-     * @return MessageList Messages
-     */
-    public function getMessages() 
-    {
+        if ($this->_fields['Messages']['FieldValue'] == null)
+        {
+            $this->_fields['Messages']['FieldValue'] = array();
+        }
         return $this->_fields['Messages']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Messages.
-     * 
-     * @param MessageList Messages
-     * @return void
+     * Set the value of the Messages property.
+     *
+     * @param array messages
+     * @return this instance
      */
-    public function setMessages($value) 
+    public function setMessages($value)
     {
+        if (!$this->_isNumericArray($value)) {
+            $value = array ($value);
+        }
         $this->_fields['Messages']['FieldValue'] = $value;
-        return;
-    }
-
-    /**
-     * Sets the value of the Messages  and returns this instance
-     * 
-     * @param MessageList $value Messages
-     * @return MarketplaceWebServiceOrders_Model_GetServiceStatusResult instance
-     */
-    public function withMessages($value)
-    {
-        $this->setMessages($value);
         return $this;
     }
 
+    /**
+     * Clear Messages.
+     */
+    public function unsetMessages()
+    {
+        $this->_fields['Messages']['FieldValue'] = array();
+    }
 
     /**
-     * Checks if Messages  is set
-     * 
-     * @return bool true if Messages property is set
+     * Check to see if Messages is set.
+     *
+     * @return true if Messages is set.
      */
     public function isSetMessages()
     {
-        return !is_null($this->_fields['Messages']['FieldValue']);
+                return !empty($this->_fields['Messages']['FieldValue']);
+            }
 
+    /**
+     * Add values for Messages, return this.
+     *
+     * @param messages
+     *             New values to add.
+     *
+     * @return This instance.
+     */
+    public function withMessages()
+    {
+        foreach (func_get_args() as $Messages)
+        {
+            $this->_fields['Messages']['FieldValue'][] = $Messages;
+        }
+        return $this;
     }
-
-
-
 
 }

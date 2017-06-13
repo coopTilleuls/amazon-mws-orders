@@ -1,24 +1,26 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 
 /**
- * Marketplace Web Service Orders  Exception provides details of errors 
- * returned by Marketplace Web Service Orders  service
+ * Marketplace Web Service Orders Exception provides details of errors
+ * returned by Marketplace Web Service Orders service
  *
  */
 class MarketplaceWebServiceOrders_Exception extends Exception
@@ -38,7 +40,6 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     private $_xml = null;
 
     private $_responseHeaderMetadata = null;
-   
 
     /**
      * Constructs MarketplaceWebServiceOrders_Exception
@@ -53,7 +54,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
      * <li>XML - (string) compete xml response at the time of exception</li>
      * <li>Exception - (Exception) inner exception if any</li>
      * </ul>
-     *         
+     *
      */
     public function __construct(array $errorInfo = array())
     {
@@ -68,14 +69,22 @@ class MarketplaceWebServiceOrders_Exception extends Exception
                 $this->_requestId = $exception->getRequestId();
                 $this->_xml= $exception->getXML();
                 $this->_responseHeaderMetadata = $exception->getResponseHeaderMetadata();
-            } 
+            }
         } else {
-            $this->_statusCode = $errorInfo["StatusCode"];
-            $this->_errorCode = $errorInfo["ErrorCode"];
-            $this->_errorType = $errorInfo["ErrorType"];
-            $this->_requestId = $errorInfo["RequestId"];
-            $this->_xml= $errorInfo["XML"];
-            $this->_responseHeaderMetadata = $errorInfo["ResponseHeaderMetadata"];
+            $this->_statusCode = $this->arr_val($errorInfo, "StatusCode");
+            $this->_errorCode = $this->arr_val($errorInfo, "ErrorCode");
+            $this->_errorType = $this->arr_val($errorInfo, "ErrorType");
+            $this->_requestId = $this->arr_val($errorInfo, "RequestId");
+            $this->_xml = $this->arr_val($errorInfo, "XML");
+            $this->_responseHeaderMetadata = $this->arr_val($errorInfo, "ResponseHeaderMetadata");
+        }
+    }
+
+    private function arr_val($arr, $key) {
+        if(array_key_exists($key, $arr)) {
+            return $arr[$key];
+        } else {
+            return null;
         }
     }
 
@@ -87,7 +96,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     public function getErrorCode(){
         return $this->_errorCode;
     }
-   
+
     /**
      * Gets error type returned by the service.
      *
@@ -97,8 +106,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     public function getErrorType(){
         return $this->_errorType;
     }
-    
-    
+
     /**
      * Gets error message
      *
@@ -107,7 +115,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     public function getErrorMessage() {
         return $this->_message;
     }
-    
+
     /**
      * Gets status code returned by the service if available. If status
      * code is set to -1, it means that status code was unavailable at the
@@ -118,7 +126,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     public function getStatusCode() {
         return $this->_statusCode;
     }
-    
+
     /**
      * Gets XML returned by the service if available.
      *
@@ -127,7 +135,7 @@ class MarketplaceWebServiceOrders_Exception extends Exception
     public function getXML() {
         return $this->_xml;
     }
-    
+
     /**
      * Gets Request ID returned by the service if available.
      *

@@ -1,26 +1,28 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 /**
  *  @see MarketplaceWebServiceOrders_Model
  */
-require_once ('MarketplaceWebServiceOrders/Model.php');  
 
-    
+require_once (dirname(__FILE__) . '/../Model.php');
+
 
 /**
  * MarketplaceWebServiceOrders_Model_OrderItem
@@ -34,6 +36,7 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * <li>Title: string</li>
  * <li>QuantityOrdered: int</li>
  * <li>QuantityShipped: int</li>
+ * <li>PointsGranted: MarketplaceWebServiceOrders_Model_PointsGrantedDetail</li>
  * <li>ItemPrice: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>ShippingPrice: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>GiftWrapPrice: MarketplaceWebServiceOrders_Model_Money</li>
@@ -42,143 +45,99 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * <li>GiftWrapTax: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>ShippingDiscount: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>PromotionDiscount: MarketplaceWebServiceOrders_Model_Money</li>
- * <li>PromotionIds: MarketplaceWebServiceOrders_Model_PromotionIdList</li>
+ * <li>PromotionIds: array</li>
  * <li>CODFee: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>CODFeeDiscount: MarketplaceWebServiceOrders_Model_Money</li>
  * <li>GiftMessageText: string</li>
  * <li>GiftWrapLevel: string</li>
  * <li>InvoiceData: MarketplaceWebServiceOrders_Model_InvoiceData</li>
- * <li>ConditionNote</li>
- * <li>ConditionId</li>
- * <li>ConditionSubtypeId</li>
- * <li>ScheduledDeliveryStartDate</li>
- * <li>ScheduledDeliveryEndDate</li>
+ * <li>ConditionNote: string</li>
+ * <li>ConditionId: string</li>
+ * <li>ConditionSubtypeId: string</li>
+ * <li>ScheduledDeliveryStartDate: string</li>
+ * <li>ScheduledDeliveryEndDate: string</li>
+ * <li>PriceDesignation: string</li>
+ * <li>BuyerCustomizedInfo: MarketplaceWebServiceOrders_Model_BuyerCustomizedInfoDetail</li>
  *
  * </ul>
- */ 
-class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceOrders_Model
-{
+ */
 
-    /**
-     * Construct new MarketplaceWebServiceOrders_Model_OrderItem
-     * 
-     * @param mixed $data DOMElement or Associative Array to construct from. 
-     * 
-     * Valid properties:
-     * <ul>
-     * 
-     * <li>ASIN: string</li>
-     * <li>SellerSKU: string</li>
-     * <li>OrderItemId: string</li>
-     * <li>Title: string</li>
-     * <li>QuantityOrdered: int</li>
-     * <li>QuantityShipped: int</li>
-     * <li>ItemPrice: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>ShippingPrice: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>GiftWrapPrice: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>ItemTax: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>ShippingTax: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>GiftWrapTax: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>ShippingDiscount: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>PromotionDiscount: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>PromotionIds: MarketplaceWebServiceOrders_Model_PromotionIdList</li>
-     * <li>CODFee: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>CODFeeDiscount: MarketplaceWebServiceOrders_Model_Money</li>
-     * <li>GiftMessageText: string</li>
-     * <li>GiftWrapLevel: string</li>
-     * <li>InvoiceData: MarketplaceWebServiceOrders_Model_InvoiceData</li>
-     * <li>ConditionNote</li>
-     * <li>ConditionId</li>
-     * <li>ConditionSubtypeId</li>
-     * <li>ScheduledDeliveryStartDate</li>
-     * <li>ScheduledDeliveryEndDate</li>
-     *
-     * </ul>
-     */
+ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceOrders_Model {
+
     public function __construct($data = null)
     {
-        $this->_fields = array (
-        'ASIN' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'SellerSKU' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'OrderItemId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Title' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'QuantityOrdered' => array('FieldValue' => null, 'FieldType' => 'int'),
-        'QuantityShipped' => array('FieldValue' => null, 'FieldType' => 'int'),
-
-        'ItemPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'ShippingPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'GiftWrapPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'ItemTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'ShippingTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'GiftWrapTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'ShippingDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'PromotionDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'PromotionIds' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_PromotionIdList'),
-
-
-        'CODFee' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-
-        'CODFeeDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
-
-        'GiftMessageText' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'GiftWrapLevel' => array('FieldValue' => null, 'FieldType' => 'string'),
-
-        'InvoiceData' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_InvoiceData'),
-        
-        'ConditionNote' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ConditionId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ConditionSubtypeId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ScheduledDeliveryStartDate' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ScheduledDeliveryEndDate' => array('FieldValue' => null, 'FieldType' => 'string'),
-
-        );
-        parent::__construct($data);
+    $this->_fields = array (
+    'ASIN' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'SellerSKU' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'OrderItemId' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Title' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'QuantityOrdered' => array('FieldValue' => null, 'FieldType' => 'int'),
+    'QuantityShipped' => array('FieldValue' => null, 'FieldType' => 'int'),
+    'PointsGranted' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_PointsGrantedDetail'),
+    'ItemPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'ShippingPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'GiftWrapPrice' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'ItemTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'ShippingTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'GiftWrapTax' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'ShippingDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'PromotionDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'PromotionIds' => array('FieldValue' => array(), 'FieldType' => array('string'), 'ListMemberName' => 'PromotionId'),
+    'CODFee' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'CODFeeDiscount' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_Money'),
+    'GiftMessageText' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'GiftWrapLevel' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'InvoiceData' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_InvoiceData'),
+    'ConditionNote' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'ConditionId' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'ConditionSubtypeId' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'ScheduledDeliveryStartDate' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'ScheduledDeliveryEndDate' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'PriceDesignation' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'BuyerCustomizedInfo' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_BuyerCustomizedInfoDetail'),
+    );
+    parent::__construct($data);
     }
 
-        /**
-     * Gets the value of the ASIN property.
-     * 
-     * @return string ASIN
+    /**
+     * Get the value of the ASIN property.
+     *
+     * @return String ASIN.
      */
-    public function getASIN() 
+    public function getASIN()
     {
         return $this->_fields['ASIN']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ASIN property.
-     * 
-     * @param string ASIN
+     * Set the value of the ASIN property.
+     *
+     * @param string asin
      * @return this instance
      */
-    public function setASIN($value) 
+    public function setASIN($value)
     {
         $this->_fields['ASIN']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ASIN and returns this instance
-     * 
-     * @param string $value ASIN
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ASIN is set.
+     *
+     * @return true if ASIN is set.
+     */
+    public function isSetASIN()
+    {
+                return !is_null($this->_fields['ASIN']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ASIN, return this.
+     *
+     * @param asin
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withASIN($value)
     {
@@ -186,44 +145,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ASIN is set
-     * 
-     * @return bool true if ASIN  is set
+     * Get the value of the SellerSKU property.
+     *
+     * @return String SellerSKU.
      */
-    public function isSetASIN()
-    {
-        return !is_null($this->_fields['ASIN']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the SellerSKU property.
-     * 
-     * @return string SellerSKU
-     */
-    public function getSellerSKU() 
+    public function getSellerSKU()
     {
         return $this->_fields['SellerSKU']['FieldValue'];
     }
 
     /**
-     * Sets the value of the SellerSKU property.
-     * 
-     * @param string SellerSKU
+     * Set the value of the SellerSKU property.
+     *
+     * @param string sellerSKU
      * @return this instance
      */
-    public function setSellerSKU($value) 
+    public function setSellerSKU($value)
     {
         $this->_fields['SellerSKU']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the SellerSKU and returns this instance
-     * 
-     * @param string $value SellerSKU
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if SellerSKU is set.
+     *
+     * @return true if SellerSKU is set.
+     */
+    public function isSetSellerSKU()
+    {
+                return !is_null($this->_fields['SellerSKU']['FieldValue']);
+            }
+
+    /**
+     * Set the value of SellerSKU, return this.
+     *
+     * @param sellerSKU
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withSellerSKU($value)
     {
@@ -231,44 +191,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if SellerSKU is set
-     * 
-     * @return bool true if SellerSKU  is set
+     * Get the value of the OrderItemId property.
+     *
+     * @return String OrderItemId.
      */
-    public function isSetSellerSKU()
-    {
-        return !is_null($this->_fields['SellerSKU']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the OrderItemId property.
-     * 
-     * @return string OrderItemId
-     */
-    public function getOrderItemId() 
+    public function getOrderItemId()
     {
         return $this->_fields['OrderItemId']['FieldValue'];
     }
 
     /**
-     * Sets the value of the OrderItemId property.
-     * 
-     * @param string OrderItemId
+     * Set the value of the OrderItemId property.
+     *
+     * @param string orderItemId
      * @return this instance
      */
-    public function setOrderItemId($value) 
+    public function setOrderItemId($value)
     {
         $this->_fields['OrderItemId']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the OrderItemId and returns this instance
-     * 
-     * @param string $value OrderItemId
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if OrderItemId is set.
+     *
+     * @return true if OrderItemId is set.
+     */
+    public function isSetOrderItemId()
+    {
+                return !is_null($this->_fields['OrderItemId']['FieldValue']);
+            }
+
+    /**
+     * Set the value of OrderItemId, return this.
+     *
+     * @param orderItemId
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withOrderItemId($value)
     {
@@ -276,44 +237,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if OrderItemId is set
-     * 
-     * @return bool true if OrderItemId  is set
+     * Get the value of the Title property.
+     *
+     * @return String Title.
      */
-    public function isSetOrderItemId()
-    {
-        return !is_null($this->_fields['OrderItemId']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the Title property.
-     * 
-     * @return string Title
-     */
-    public function getTitle() 
+    public function getTitle()
     {
         return $this->_fields['Title']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Title property.
-     * 
-     * @param string Title
+     * Set the value of the Title property.
+     *
+     * @param string title
      * @return this instance
      */
-    public function setTitle($value) 
+    public function setTitle($value)
     {
         $this->_fields['Title']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Title and returns this instance
-     * 
-     * @param string $value Title
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if Title is set.
+     *
+     * @return true if Title is set.
+     */
+    public function isSetTitle()
+    {
+                return !is_null($this->_fields['Title']['FieldValue']);
+            }
+
+    /**
+     * Set the value of Title, return this.
+     *
+     * @param title
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withTitle($value)
     {
@@ -321,44 +283,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if Title is set
-     * 
-     * @return bool true if Title  is set
+     * Get the value of the QuantityOrdered property.
+     *
+     * @return int QuantityOrdered.
      */
-    public function isSetTitle()
-    {
-        return !is_null($this->_fields['Title']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the QuantityOrdered property.
-     * 
-     * @return int QuantityOrdered
-     */
-    public function getQuantityOrdered() 
+    public function getQuantityOrdered()
     {
         return $this->_fields['QuantityOrdered']['FieldValue'];
     }
 
     /**
-     * Sets the value of the QuantityOrdered property.
-     * 
-     * @param int QuantityOrdered
+     * Set the value of the QuantityOrdered property.
+     *
+     * @param int quantityOrdered
      * @return this instance
      */
-    public function setQuantityOrdered($value) 
+    public function setQuantityOrdered($value)
     {
         $this->_fields['QuantityOrdered']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the QuantityOrdered and returns this instance
-     * 
-     * @param int $value QuantityOrdered
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if QuantityOrdered is set.
+     *
+     * @return true if QuantityOrdered is set.
+     */
+    public function isSetQuantityOrdered()
+    {
+                return !is_null($this->_fields['QuantityOrdered']['FieldValue']);
+            }
+
+    /**
+     * Set the value of QuantityOrdered, return this.
+     *
+     * @param quantityOrdered
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withQuantityOrdered($value)
     {
@@ -366,44 +329,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if QuantityOrdered is set
-     * 
-     * @return bool true if QuantityOrdered  is set
+     * Get the value of the QuantityShipped property.
+     *
+     * @return Integer QuantityShipped.
      */
-    public function isSetQuantityOrdered()
-    {
-        return !is_null($this->_fields['QuantityOrdered']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the QuantityShipped property.
-     * 
-     * @return int QuantityShipped
-     */
-    public function getQuantityShipped() 
+    public function getQuantityShipped()
     {
         return $this->_fields['QuantityShipped']['FieldValue'];
     }
 
     /**
-     * Sets the value of the QuantityShipped property.
-     * 
-     * @param int QuantityShipped
+     * Set the value of the QuantityShipped property.
+     *
+     * @param int quantityShipped
      * @return this instance
      */
-    public function setQuantityShipped($value) 
+    public function setQuantityShipped($value)
     {
         $this->_fields['QuantityShipped']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the QuantityShipped and returns this instance
-     * 
-     * @param int $value QuantityShipped
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if QuantityShipped is set.
+     *
+     * @return true if QuantityShipped is set.
+     */
+    public function isSetQuantityShipped()
+    {
+                return !is_null($this->_fields['QuantityShipped']['FieldValue']);
+            }
+
+    /**
+     * Set the value of QuantityShipped, return this.
+     *
+     * @param quantityShipped
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withQuantityShipped($value)
     {
@@ -411,44 +375,91 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if QuantityShipped is set
-     * 
-     * @return bool true if QuantityShipped  is set
+     * Get the value of the PointsGranted property.
+     *
+     * @return PointsGrantedDetail PointsGranted.
      */
-    public function isSetQuantityShipped()
+    public function getPointsGranted()
     {
-        return !is_null($this->_fields['QuantityShipped']['FieldValue']);
+        return $this->_fields['PointsGranted']['FieldValue'];
     }
 
     /**
-     * Gets the value of the ItemPrice.
-     * 
-     * @return Money ItemPrice
+     * Set the value of the PointsGranted property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_PointsGrantedDetail pointsGranted
+     * @return this instance
      */
-    public function getItemPrice() 
+    public function setPointsGranted($value)
+    {
+        $this->_fields['PointsGranted']['FieldValue'] = $value;
+        return $this;
+    }
+
+    /**
+     * Check to see if PointsGranted is set.
+     *
+     * @return true if PointsGranted is set.
+     */
+    public function isSetPointsGranted()
+    {
+                return !is_null($this->_fields['PointsGranted']['FieldValue']);
+            }
+
+    /**
+     * Set the value of PointsGranted, return this.
+     *
+     * @param pointsGranted
+     *             The new value to set.
+     *
+     * @return This instance.
+     */
+    public function withPointsGranted($value)
+    {
+        $this->setPointsGranted($value);
+        return $this;
+    }
+
+    /**
+     * Get the value of the ItemPrice property.
+     *
+     * @return Money ItemPrice.
+     */
+    public function getItemPrice()
     {
         return $this->_fields['ItemPrice']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ItemPrice.
-     * 
-     * @param Money ItemPrice
-     * @return void
+     * Set the value of the ItemPrice property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money itemPrice
+     * @return this instance
      */
-    public function setItemPrice($value) 
+    public function setItemPrice($value)
     {
         $this->_fields['ItemPrice']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ItemPrice  and returns this instance
-     * 
-     * @param Money $value ItemPrice
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ItemPrice is set.
+     *
+     * @return true if ItemPrice is set.
+     */
+    public function isSetItemPrice()
+    {
+                return !is_null($this->_fields['ItemPrice']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ItemPrice, return this.
+     *
+     * @param itemPrice
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withItemPrice($value)
     {
@@ -456,45 +467,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ItemPrice  is set
-     * 
-     * @return bool true if ItemPrice property is set
+     * Get the value of the ShippingPrice property.
+     *
+     * @return Money ShippingPrice.
      */
-    public function isSetItemPrice()
-    {
-        return !is_null($this->_fields['ItemPrice']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ShippingPrice.
-     * 
-     * @return Money ShippingPrice
-     */
-    public function getShippingPrice() 
+    public function getShippingPrice()
     {
         return $this->_fields['ShippingPrice']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ShippingPrice.
-     * 
-     * @param Money ShippingPrice
-     * @return void
+     * Set the value of the ShippingPrice property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money shippingPrice
+     * @return this instance
      */
-    public function setShippingPrice($value) 
+    public function setShippingPrice($value)
     {
         $this->_fields['ShippingPrice']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ShippingPrice  and returns this instance
-     * 
-     * @param Money $value ShippingPrice
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ShippingPrice is set.
+     *
+     * @return true if ShippingPrice is set.
+     */
+    public function isSetShippingPrice()
+    {
+                return !is_null($this->_fields['ShippingPrice']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ShippingPrice, return this.
+     *
+     * @param shippingPrice
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withShippingPrice($value)
     {
@@ -502,45 +513,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ShippingPrice  is set
-     * 
-     * @return bool true if ShippingPrice property is set
+     * Get the value of the GiftWrapPrice property.
+     *
+     * @return Money GiftWrapPrice.
      */
-    public function isSetShippingPrice()
-    {
-        return !is_null($this->_fields['ShippingPrice']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the GiftWrapPrice.
-     * 
-     * @return Money GiftWrapPrice
-     */
-    public function getGiftWrapPrice() 
+    public function getGiftWrapPrice()
     {
         return $this->_fields['GiftWrapPrice']['FieldValue'];
     }
 
     /**
-     * Sets the value of the GiftWrapPrice.
-     * 
-     * @param Money GiftWrapPrice
-     * @return void
+     * Set the value of the GiftWrapPrice property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money giftWrapPrice
+     * @return this instance
      */
-    public function setGiftWrapPrice($value) 
+    public function setGiftWrapPrice($value)
     {
         $this->_fields['GiftWrapPrice']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the GiftWrapPrice  and returns this instance
-     * 
-     * @param Money $value GiftWrapPrice
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if GiftWrapPrice is set.
+     *
+     * @return true if GiftWrapPrice is set.
+     */
+    public function isSetGiftWrapPrice()
+    {
+                return !is_null($this->_fields['GiftWrapPrice']['FieldValue']);
+            }
+
+    /**
+     * Set the value of GiftWrapPrice, return this.
+     *
+     * @param giftWrapPrice
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withGiftWrapPrice($value)
     {
@@ -548,45 +559,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if GiftWrapPrice  is set
-     * 
-     * @return bool true if GiftWrapPrice property is set
+     * Get the value of the ItemTax property.
+     *
+     * @return Money ItemTax.
      */
-    public function isSetGiftWrapPrice()
-    {
-        return !is_null($this->_fields['GiftWrapPrice']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ItemTax.
-     * 
-     * @return Money ItemTax
-     */
-    public function getItemTax() 
+    public function getItemTax()
     {
         return $this->_fields['ItemTax']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ItemTax.
-     * 
-     * @param Money ItemTax
-     * @return void
+     * Set the value of the ItemTax property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money itemTax
+     * @return this instance
      */
-    public function setItemTax($value) 
+    public function setItemTax($value)
     {
         $this->_fields['ItemTax']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ItemTax  and returns this instance
-     * 
-     * @param Money $value ItemTax
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ItemTax is set.
+     *
+     * @return true if ItemTax is set.
+     */
+    public function isSetItemTax()
+    {
+                return !is_null($this->_fields['ItemTax']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ItemTax, return this.
+     *
+     * @param itemTax
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withItemTax($value)
     {
@@ -594,45 +605,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ItemTax  is set
-     * 
-     * @return bool true if ItemTax property is set
+     * Get the value of the ShippingTax property.
+     *
+     * @return Money ShippingTax.
      */
-    public function isSetItemTax()
-    {
-        return !is_null($this->_fields['ItemTax']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ShippingTax.
-     * 
-     * @return Money ShippingTax
-     */
-    public function getShippingTax() 
+    public function getShippingTax()
     {
         return $this->_fields['ShippingTax']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ShippingTax.
-     * 
-     * @param Money ShippingTax
-     * @return void
+     * Set the value of the ShippingTax property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money shippingTax
+     * @return this instance
      */
-    public function setShippingTax($value) 
+    public function setShippingTax($value)
     {
         $this->_fields['ShippingTax']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ShippingTax  and returns this instance
-     * 
-     * @param Money $value ShippingTax
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ShippingTax is set.
+     *
+     * @return true if ShippingTax is set.
+     */
+    public function isSetShippingTax()
+    {
+                return !is_null($this->_fields['ShippingTax']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ShippingTax, return this.
+     *
+     * @param shippingTax
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withShippingTax($value)
     {
@@ -640,45 +651,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ShippingTax  is set
-     * 
-     * @return bool true if ShippingTax property is set
+     * Get the value of the GiftWrapTax property.
+     *
+     * @return Money GiftWrapTax.
      */
-    public function isSetShippingTax()
-    {
-        return !is_null($this->_fields['ShippingTax']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the GiftWrapTax.
-     * 
-     * @return Money GiftWrapTax
-     */
-    public function getGiftWrapTax() 
+    public function getGiftWrapTax()
     {
         return $this->_fields['GiftWrapTax']['FieldValue'];
     }
 
     /**
-     * Sets the value of the GiftWrapTax.
-     * 
-     * @param Money GiftWrapTax
-     * @return void
+     * Set the value of the GiftWrapTax property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money giftWrapTax
+     * @return this instance
      */
-    public function setGiftWrapTax($value) 
+    public function setGiftWrapTax($value)
     {
         $this->_fields['GiftWrapTax']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the GiftWrapTax  and returns this instance
-     * 
-     * @param Money $value GiftWrapTax
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if GiftWrapTax is set.
+     *
+     * @return true if GiftWrapTax is set.
+     */
+    public function isSetGiftWrapTax()
+    {
+                return !is_null($this->_fields['GiftWrapTax']['FieldValue']);
+            }
+
+    /**
+     * Set the value of GiftWrapTax, return this.
+     *
+     * @param giftWrapTax
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withGiftWrapTax($value)
     {
@@ -686,45 +697,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if GiftWrapTax  is set
-     * 
-     * @return bool true if GiftWrapTax property is set
+     * Get the value of the ShippingDiscount property.
+     *
+     * @return Money ShippingDiscount.
      */
-    public function isSetGiftWrapTax()
-    {
-        return !is_null($this->_fields['GiftWrapTax']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ShippingDiscount.
-     * 
-     * @return Money ShippingDiscount
-     */
-    public function getShippingDiscount() 
+    public function getShippingDiscount()
     {
         return $this->_fields['ShippingDiscount']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ShippingDiscount.
-     * 
-     * @param Money ShippingDiscount
-     * @return void
+     * Set the value of the ShippingDiscount property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money shippingDiscount
+     * @return this instance
      */
-    public function setShippingDiscount($value) 
+    public function setShippingDiscount($value)
     {
         $this->_fields['ShippingDiscount']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the ShippingDiscount  and returns this instance
-     * 
-     * @param Money $value ShippingDiscount
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ShippingDiscount is set.
+     *
+     * @return true if ShippingDiscount is set.
+     */
+    public function isSetShippingDiscount()
+    {
+                return !is_null($this->_fields['ShippingDiscount']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ShippingDiscount, return this.
+     *
+     * @param shippingDiscount
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withShippingDiscount($value)
     {
@@ -732,45 +743,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ShippingDiscount  is set
-     * 
-     * @return bool true if ShippingDiscount property is set
+     * Get the value of the PromotionDiscount property.
+     *
+     * @return Money PromotionDiscount.
      */
-    public function isSetShippingDiscount()
-    {
-        return !is_null($this->_fields['ShippingDiscount']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the PromotionDiscount.
-     * 
-     * @return Money PromotionDiscount
-     */
-    public function getPromotionDiscount() 
+    public function getPromotionDiscount()
     {
         return $this->_fields['PromotionDiscount']['FieldValue'];
     }
 
     /**
-     * Sets the value of the PromotionDiscount.
-     * 
-     * @param Money PromotionDiscount
-     * @return void
+     * Set the value of the PromotionDiscount property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money promotionDiscount
+     * @return this instance
      */
-    public function setPromotionDiscount($value) 
+    public function setPromotionDiscount($value)
     {
         $this->_fields['PromotionDiscount']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the PromotionDiscount  and returns this instance
-     * 
-     * @param Money $value PromotionDiscount
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if PromotionDiscount is set.
+     *
+     * @return true if PromotionDiscount is set.
+     */
+    public function isSetPromotionDiscount()
+    {
+                return !is_null($this->_fields['PromotionDiscount']['FieldValue']);
+            }
+
+    /**
+     * Set the value of PromotionDiscount, return this.
+     *
+     * @param promotionDiscount
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withPromotionDiscount($value)
     {
@@ -778,91 +789,109 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if PromotionDiscount  is set
-     * 
-     * @return bool true if PromotionDiscount property is set
+     * Get the value of the PromotionIds property.
+     *
+     * @return List<String> PromotionIds.
      */
-    public function isSetPromotionDiscount()
+    public function getPromotionIds()
     {
-        return !is_null($this->_fields['PromotionDiscount']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the PromotionIds.
-     * 
-     * @return PromotionIdList PromotionIds
-     */
-    public function getPromotionIds() 
-    {
+        if ($this->_fields['PromotionIds']['FieldValue'] == null)
+        {
+            $this->_fields['PromotionIds']['FieldValue'] = array();
+        }
         return $this->_fields['PromotionIds']['FieldValue'];
     }
 
     /**
-     * Sets the value of the PromotionIds.
-     * 
-     * @param PromotionIdList PromotionIds
-     * @return void
+     * Set the value of the PromotionIds property.
+     *
+     * @param array promotionIds
+     * @return this instance
      */
-    public function setPromotionIds($value) 
+    public function setPromotionIds($value)
     {
+        if (!$this->_isNumericArray($value)) {
+            $value = array ($value);
+        }
         $this->_fields['PromotionIds']['FieldValue'] = $value;
-        return;
-    }
-
-    /**
-     * Sets the value of the PromotionIds  and returns this instance
-     * 
-     * @param PromotionIdList $value PromotionIds
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
-     */
-    public function withPromotionIds($value)
-    {
-        $this->setPromotionIds($value);
         return $this;
     }
 
-
     /**
-     * Checks if PromotionIds  is set
-     * 
-     * @return bool true if PromotionIds property is set
+     * Clear PromotionIds.
      */
-    public function isSetPromotionIds()
+    public function unsetPromotionIds()
     {
-        return !is_null($this->_fields['PromotionIds']['FieldValue']);
-
+        $this->_fields['PromotionIds']['FieldValue'] = array();
     }
 
     /**
-     * Gets the value of the CODFee.
-     * 
-     * @return Money CODFee
+     * Check to see if PromotionIds is set.
+     *
+     * @return true if PromotionIds is set.
      */
-    public function getCODFee() 
+    public function isSetPromotionIds()
+    {
+                return !empty($this->_fields['PromotionIds']['FieldValue']);
+            }
+
+    /**
+     * Add values for PromotionIds, return this.
+     *
+     * @param promotionIds
+     *             New values to add.
+     *
+     * @return This instance.
+     */
+    public function withPromotionIds()
+    {
+        foreach (func_get_args() as $PromotionIds)
+        {
+            $this->_fields['PromotionIds']['FieldValue'][] = $PromotionIds;
+        }
+        return $this;
+    }
+
+    /**
+     * Get the value of the CODFee property.
+     *
+     * @return Money CODFee.
+     */
+    public function getCODFee()
     {
         return $this->_fields['CODFee']['FieldValue'];
     }
 
     /**
-     * Sets the value of the CODFee.
-     * 
-     * @param Money CODFee
-     * @return void
+     * Set the value of the CODFee property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money codFee
+     * @return this instance
      */
-    public function setCODFee($value) 
+    public function setCODFee($value)
     {
         $this->_fields['CODFee']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the CODFee  and returns this instance
-     * 
-     * @param Money $value CODFee
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if CODFee is set.
+     *
+     * @return true if CODFee is set.
+     */
+    public function isSetCODFee()
+    {
+                return !is_null($this->_fields['CODFee']['FieldValue']);
+            }
+
+    /**
+     * Set the value of CODFee, return this.
+     *
+     * @param codFee
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withCODFee($value)
     {
@@ -870,45 +899,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if CODFee  is set
-     * 
-     * @return bool true if CODFee property is set
+     * Get the value of the CODFeeDiscount property.
+     *
+     * @return Money CODFeeDiscount.
      */
-    public function isSetCODFee()
-    {
-        return !is_null($this->_fields['CODFee']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the CODFeeDiscount.
-     * 
-     * @return Money CODFeeDiscount
-     */
-    public function getCODFeeDiscount() 
+    public function getCODFeeDiscount()
     {
         return $this->_fields['CODFeeDiscount']['FieldValue'];
     }
 
     /**
-     * Sets the value of the CODFeeDiscount.
-     * 
-     * @param Money CODFeeDiscount
-     * @return void
+     * Set the value of the CODFeeDiscount property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_Money codFeeDiscount
+     * @return this instance
      */
-    public function setCODFeeDiscount($value) 
+    public function setCODFeeDiscount($value)
     {
         $this->_fields['CODFeeDiscount']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the CODFeeDiscount  and returns this instance
-     * 
-     * @param Money $value CODFeeDiscount
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if CODFeeDiscount is set.
+     *
+     * @return true if CODFeeDiscount is set.
+     */
+    public function isSetCODFeeDiscount()
+    {
+                return !is_null($this->_fields['CODFeeDiscount']['FieldValue']);
+            }
+
+    /**
+     * Set the value of CODFeeDiscount, return this.
+     *
+     * @param codFeeDiscount
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withCODFeeDiscount($value)
     {
@@ -916,45 +945,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if CODFeeDiscount  is set
-     * 
-     * @return bool true if CODFeeDiscount property is set
+     * Get the value of the GiftMessageText property.
+     *
+     * @return String GiftMessageText.
      */
-    public function isSetCODFeeDiscount()
-    {
-        return !is_null($this->_fields['CODFeeDiscount']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the GiftMessageText property.
-     * 
-     * @return string GiftMessageText
-     */
-    public function getGiftMessageText() 
+    public function getGiftMessageText()
     {
         return $this->_fields['GiftMessageText']['FieldValue'];
     }
 
     /**
-     * Sets the value of the GiftMessageText property.
-     * 
-     * @param string GiftMessageText
+     * Set the value of the GiftMessageText property.
+     *
+     * @param string giftMessageText
      * @return this instance
      */
-    public function setGiftMessageText($value) 
+    public function setGiftMessageText($value)
     {
         $this->_fields['GiftMessageText']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the GiftMessageText and returns this instance
-     * 
-     * @param string $value GiftMessageText
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if GiftMessageText is set.
+     *
+     * @return true if GiftMessageText is set.
+     */
+    public function isSetGiftMessageText()
+    {
+                return !is_null($this->_fields['GiftMessageText']['FieldValue']);
+            }
+
+    /**
+     * Set the value of GiftMessageText, return this.
+     *
+     * @param giftMessageText
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withGiftMessageText($value)
     {
@@ -962,44 +991,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if GiftMessageText is set
-     * 
-     * @return bool true if GiftMessageText  is set
+     * Get the value of the GiftWrapLevel property.
+     *
+     * @return String GiftWrapLevel.
      */
-    public function isSetGiftMessageText()
-    {
-        return !is_null($this->_fields['GiftMessageText']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the GiftWrapLevel property.
-     * 
-     * @return string GiftWrapLevel
-     */
-    public function getGiftWrapLevel() 
+    public function getGiftWrapLevel()
     {
         return $this->_fields['GiftWrapLevel']['FieldValue'];
     }
 
     /**
-     * Sets the value of the GiftWrapLevel property.
-     * 
-     * @param string GiftWrapLevel
+     * Set the value of the GiftWrapLevel property.
+     *
+     * @param string giftWrapLevel
      * @return this instance
      */
-    public function setGiftWrapLevel($value) 
+    public function setGiftWrapLevel($value)
     {
         $this->_fields['GiftWrapLevel']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the GiftWrapLevel and returns this instance
-     * 
-     * @param string $value GiftWrapLevel
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if GiftWrapLevel is set.
+     *
+     * @return true if GiftWrapLevel is set.
+     */
+    public function isSetGiftWrapLevel()
+    {
+                return !is_null($this->_fields['GiftWrapLevel']['FieldValue']);
+            }
+
+    /**
+     * Set the value of GiftWrapLevel, return this.
+     *
+     * @param giftWrapLevel
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withGiftWrapLevel($value)
     {
@@ -1007,44 +1037,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if GiftWrapLevel is set
-     * 
-     * @return bool true if GiftWrapLevel  is set
+     * Get the value of the InvoiceData property.
+     *
+     * @return InvoiceData InvoiceData.
      */
-    public function isSetGiftWrapLevel()
-    {
-        return !is_null($this->_fields['GiftWrapLevel']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the InvoiceData.
-     * 
-     * @return InvoiceData InvoiceData
-     */
-    public function getInvoiceData() 
+    public function getInvoiceData()
     {
         return $this->_fields['InvoiceData']['FieldValue'];
     }
 
     /**
-     * Sets the value of the InvoiceData.
-     * 
-     * @param InvoiceData InvoiceData
-     * @return void
+     * Set the value of the InvoiceData property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_InvoiceData invoiceData
+     * @return this instance
      */
-    public function setInvoiceData($value) 
+    public function setInvoiceData($value)
     {
         $this->_fields['InvoiceData']['FieldValue'] = $value;
-        return;
+        return $this;
     }
 
     /**
-     * Sets the value of the InvoiceData  and returns this instance
-     * 
-     * @param InvoiceData $value InvoiceData
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if InvoiceData is set.
+     *
+     * @return true if InvoiceData is set.
+     */
+    public function isSetInvoiceData()
+    {
+                return !is_null($this->_fields['InvoiceData']['FieldValue']);
+            }
+
+    /**
+     * Set the value of InvoiceData, return this.
+     *
+     * @param invoiceData
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withInvoiceData($value)
     {
@@ -1052,45 +1083,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if InvoiceData  is set
-     * 
-     * @return bool true if InvoiceData property is set
+     * Get the value of the ConditionNote property.
+     *
+     * @return String ConditionNote.
      */
-    public function isSetInvoiceData()
-    {
-        return !is_null($this->_fields['InvoiceData']['FieldValue']);
-
-    }
-
-    /**
-     * Gets the value of the ConditionNote property.
-     * 
-     * @return string ConditionNote
-     */
-    public function getConditionNote() 
+    public function getConditionNote()
     {
         return $this->_fields['ConditionNote']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ConditionNote property.
-     * 
-     * @param string ConditionNote
+     * Set the value of the ConditionNote property.
+     *
+     * @param string conditionNote
      * @return this instance
      */
-    public function setConditionNote($value) 
+    public function setConditionNote($value)
     {
         $this->_fields['ConditionNote']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ConditionNote and returns this instance
-     * 
-     * @param string $value ConditionNote
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ConditionNote is set.
+     *
+     * @return true if ConditionNote is set.
+     */
+    public function isSetConditionNote()
+    {
+                return !is_null($this->_fields['ConditionNote']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ConditionNote, return this.
+     *
+     * @param conditionNote
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withConditionNote($value)
     {
@@ -1098,45 +1129,45 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
         return $this;
     }
 
-
     /**
-     * Checks if ConditionNote is set
-     * 
-     * @return bool true if ConditionNote  is set
+     * Get the value of the ConditionId property.
+     *
+     * @return String ConditionId.
      */
-    public function isSetConditionNote()
-    {
-        return !is_null($this->_fields['ConditionNote']['FieldValue']);
-    }
- 
-    
-    /**
-     * Gets the value of the ConditionId property.
-     * 
-     * @return string ConditionId
-     */
-    public function getConditionId() 
+    public function getConditionId()
     {
         return $this->_fields['ConditionId']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ConditionId property.
-     * 
-     * @param string ConditionId
+     * Set the value of the ConditionId property.
+     *
+     * @param string conditionId
      * @return this instance
      */
-    public function setConditionId($value) 
+    public function setConditionId($value)
     {
         $this->_fields['ConditionId']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ConditionId and returns this instance
-     * 
-     * @param string $value ConditionId
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ConditionId is set.
+     *
+     * @return true if ConditionId is set.
+     */
+    public function isSetConditionId()
+    {
+                return !is_null($this->_fields['ConditionId']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ConditionId, return this.
+     *
+     * @param conditionId
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withConditionId($value)
     {
@@ -1145,44 +1176,44 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
     }
 
     /**
-     * Checks if ConditionId is set
-     * 
-     * @return bool true if ConditionId  is set
+     * Get the value of the ConditionSubtypeId property.
+     *
+     * @return String ConditionSubtypeId.
      */
-    public function isSetConditionId()
-    {
-        return !is_null($this->_fields['ConditionId']['FieldValue']);
-    }
-
-
-
-    /**
-     * Gets the value of the ConditionSubtypeId property.
-     * 
-     * @return string ConditionSubtypeId
-     */
-    public function getConditionSubtypeId() 
+    public function getConditionSubtypeId()
     {
         return $this->_fields['ConditionSubtypeId']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ConditionSubtypeId property.
-     * 
-     * @param string ConditionSubtypeId
+     * Set the value of the ConditionSubtypeId property.
+     *
+     * @param string conditionSubtypeId
      * @return this instance
      */
-    public function setConditionSubtypeId($value) 
+    public function setConditionSubtypeId($value)
     {
         $this->_fields['ConditionSubtypeId']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ConditionSubtypeId and returns this instance
-     * 
-     * @param string $value ConditionSubtypeId
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ConditionSubtypeId is set.
+     *
+     * @return true if ConditionSubtypeId is set.
+     */
+    public function isSetConditionSubtypeId()
+    {
+                return !is_null($this->_fields['ConditionSubtypeId']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ConditionSubtypeId, return this.
+     *
+     * @param conditionSubtypeId
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withConditionSubtypeId($value)
     {
@@ -1191,44 +1222,44 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
     }
 
     /**
-     * Checks if ConditionSubtypeId is set
-     * 
-     * @return bool true if ConditionSubtypeId  is set
+     * Get the value of the ScheduledDeliveryStartDate property.
+     *
+     * @return String ScheduledDeliveryStartDate.
      */
-    public function isSetConditionSubtypeId()
-    {
-        return !is_null($this->_fields['ConditionSubtypeId']['FieldValue']);
-    }
-
-    
-
-    /**
-     * Gets the value of the ScheduledDeliveryStartDate property.
-     * 
-     * @return string ScheduledDeliveryStartDate
-     */
-    public function getScheduledDeliveryStartDate() 
+    public function getScheduledDeliveryStartDate()
     {
         return $this->_fields['ScheduledDeliveryStartDate']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ScheduledDeliveryStartDate property.
-     * 
-     * @param string ScheduledDeliveryStartDate
+     * Set the value of the ScheduledDeliveryStartDate property.
+     *
+     * @param string scheduledDeliveryStartDate
      * @return this instance
      */
-    public function setScheduledDeliveryStartDate($value) 
+    public function setScheduledDeliveryStartDate($value)
     {
         $this->_fields['ScheduledDeliveryStartDate']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ScheduledDeliveryStartDate and returns this instance
-     * 
-     * @param string $value ScheduledDeliveryStartDate
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ScheduledDeliveryStartDate is set.
+     *
+     * @return true if ScheduledDeliveryStartDate is set.
+     */
+    public function isSetScheduledDeliveryStartDate()
+    {
+                return !is_null($this->_fields['ScheduledDeliveryStartDate']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ScheduledDeliveryStartDate, return this.
+     *
+     * @param scheduledDeliveryStartDate
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withScheduledDeliveryStartDate($value)
     {
@@ -1237,43 +1268,44 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
     }
 
     /**
-     * Checks if ScheduledDeliveryStartDate is set
-     * 
-     * @return bool true if ScheduledDeliveryStartDate  is set
+     * Get the value of the ScheduledDeliveryEndDate property.
+     *
+     * @return String ScheduledDeliveryEndDate.
      */
-    public function isSetScheduledDeliveryStartDate()
-    {
-        return !is_null($this->_fields['ScheduledDeliveryStartDate']['FieldValue']);
-    }
-
-
-    /**
-     * Gets the value of the ScheduledDeliveryEndDate property.
-     * 
-     * @return string ScheduledDeliveryEndDate
-     */
-    public function getScheduledDeliveryEndDate() 
+    public function getScheduledDeliveryEndDate()
     {
         return $this->_fields['ScheduledDeliveryEndDate']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ScheduledDeliveryEndDate property.
-     * 
-     * @param string ScheduledDeliveryEndDate
+     * Set the value of the ScheduledDeliveryEndDate property.
+     *
+     * @param string scheduledDeliveryEndDate
      * @return this instance
      */
-    public function setScheduledDeliveryEndDate($value) 
+    public function setScheduledDeliveryEndDate($value)
     {
         $this->_fields['ScheduledDeliveryEndDate']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ScheduledDeliveryEndDate and returns this instance
-     * 
-     * @param string $value ScheduledDeliveryEndDate
-     * @return MarketplaceWebServiceOrders_Model_OrderItem instance
+     * Check to see if ScheduledDeliveryEndDate is set.
+     *
+     * @return true if ScheduledDeliveryEndDate is set.
+     */
+    public function isSetScheduledDeliveryEndDate()
+    {
+                return !is_null($this->_fields['ScheduledDeliveryEndDate']['FieldValue']);
+            }
+
+    /**
+     * Set the value of ScheduledDeliveryEndDate, return this.
+     *
+     * @param scheduledDeliveryEndDate
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withScheduledDeliveryEndDate($value)
     {
@@ -1282,16 +1314,95 @@ class MarketplaceWebServiceOrders_Model_OrderItem extends MarketplaceWebServiceO
     }
 
     /**
-     * Checks if ScheduledDeliveryEndDate is set
-     * 
-     * @return bool true if ScheduledDeliveryEndDate  is set
+     * Get the value of the PriceDesignation property.
+     *
+     * @return String PriceDesignation.
      */
-    public function isSetScheduledDeliveryEndDate()
+    public function getPriceDesignation()
     {
-        return !is_null($this->_fields['ScheduledDeliveryEndDate']['FieldValue']);
+        return $this->_fields['PriceDesignation']['FieldValue'];
     }
 
+    /**
+     * Set the value of the PriceDesignation property.
+     *
+     * @param string priceDesignation
+     * @return this instance
+     */
+    public function setPriceDesignation($value)
+    {
+        $this->_fields['PriceDesignation']['FieldValue'] = $value;
+        return $this;
+    }
 
+    /**
+     * Check to see if PriceDesignation is set.
+     *
+     * @return true if PriceDesignation is set.
+     */
+    public function isSetPriceDesignation()
+    {
+                return !is_null($this->_fields['PriceDesignation']['FieldValue']);
+            }
 
+    /**
+     * Set the value of PriceDesignation, return this.
+     *
+     * @param priceDesignation
+     *             The new value to set.
+     *
+     * @return This instance.
+     */
+    public function withPriceDesignation($value)
+    {
+        $this->setPriceDesignation($value);
+        return $this;
+    }
+
+    /**
+     * Get the value of the BuyerCustomizedInfo property.
+     *
+     * @return BuyerCustomizedInfoDetail BuyerCustomizedInfo.
+     */
+    public function getBuyerCustomizedInfo()
+    {
+        return $this->_fields['BuyerCustomizedInfo']['FieldValue'];
+    }
+
+    /**
+     * Set the value of the BuyerCustomizedInfo property.
+     *
+     * @param MarketplaceWebServiceOrders_Model_BuyerCustomizedInfoDetail buyerCustomizedInfo
+     * @return this instance
+     */
+    public function setBuyerCustomizedInfo($value)
+    {
+        $this->_fields['BuyerCustomizedInfo']['FieldValue'] = $value;
+        return $this;
+    }
+
+    /**
+     * Check to see if BuyerCustomizedInfo is set.
+     *
+     * @return true if BuyerCustomizedInfo is set.
+     */
+    public function isSetBuyerCustomizedInfo()
+    {
+                return !is_null($this->_fields['BuyerCustomizedInfo']['FieldValue']);
+            }
+
+    /**
+     * Set the value of BuyerCustomizedInfo, return this.
+     *
+     * @param buyerCustomizedInfo
+     *             The new value to set.
+     *
+     * @return This instance.
+     */
+    public function withBuyerCustomizedInfo($value)
+    {
+        $this->setBuyerCustomizedInfo($value);
+        return $this;
+    }
 
 }

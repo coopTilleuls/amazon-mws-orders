@@ -1,26 +1,28 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 /**
  *  @see MarketplaceWebServiceOrders_Model
  */
-require_once ('MarketplaceWebServiceOrders/Model.php');  
 
-    
+require_once (dirname(__FILE__) . '/../Model.php');
+
 
 /**
  * MarketplaceWebServiceOrders_Model_GetOrderResult
@@ -28,82 +30,83 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * Properties:
  * <ul>
  * 
- * <li>Orders: MarketplaceWebServiceOrders_Model_OrderList</li>
+ * <li>Orders: array</li>
  *
  * </ul>
- */ 
-class MarketplaceWebServiceOrders_Model_GetOrderResult extends MarketplaceWebServiceOrders_Model
-{
+ */
 
-    /**
-     * Construct new MarketplaceWebServiceOrders_Model_GetOrderResult
-     * 
-     * @param mixed $data DOMElement or Associative Array to construct from. 
-     * 
-     * Valid properties:
-     * <ul>
-     * 
-     * <li>Orders: MarketplaceWebServiceOrders_Model_OrderList</li>
-     *
-     * </ul>
-     */
+ class MarketplaceWebServiceOrders_Model_GetOrderResult extends MarketplaceWebServiceOrders_Model {
+
     public function __construct($data = null)
     {
-        $this->_fields = array (
-
-        'Orders' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebServiceOrders_Model_OrderList'),
-
-        );
-        parent::__construct($data);
+    $this->_fields = array (
+    'Orders' => array('FieldValue' => array(), 'FieldType' => array('MarketplaceWebServiceOrders_Model_Order'), 'ListMemberName' => 'Order'),
+    );
+    parent::__construct($data);
     }
 
-        /**
-     * Gets the value of the Orders.
-     * 
-     * @return OrderList Orders
+    /**
+     * Get the value of the Orders property.
+     *
+     * @return List<Order> Orders.
      */
-    public function getOrders() 
+    public function getOrders()
     {
+        if ($this->_fields['Orders']['FieldValue'] == null)
+        {
+            $this->_fields['Orders']['FieldValue'] = array();
+        }
         return $this->_fields['Orders']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Orders.
-     * 
-     * @param OrderList Orders
-     * @return void
+     * Set the value of the Orders property.
+     *
+     * @param array orders
+     * @return this instance
      */
-    public function setOrders($value) 
+    public function setOrders($value)
     {
+        if (!$this->_isNumericArray($value)) {
+            $value = array ($value);
+        }
         $this->_fields['Orders']['FieldValue'] = $value;
-        return;
-    }
-
-    /**
-     * Sets the value of the Orders  and returns this instance
-     * 
-     * @param OrderList $value Orders
-     * @return MarketplaceWebServiceOrders_Model_GetOrderResult instance
-     */
-    public function withOrders($value)
-    {
-        $this->setOrders($value);
         return $this;
     }
 
+    /**
+     * Clear Orders.
+     */
+    public function unsetOrders()
+    {
+        $this->_fields['Orders']['FieldValue'] = array();
+    }
 
     /**
-     * Checks if Orders  is set
-     * 
-     * @return bool true if Orders property is set
+     * Check to see if Orders is set.
+     *
+     * @return true if Orders is set.
      */
     public function isSetOrders()
     {
-        return !is_null($this->_fields['Orders']['FieldValue']);
+                return !empty($this->_fields['Orders']['FieldValue']);
+            }
 
+    /**
+     * Add values for Orders, return this.
+     *
+     * @param orders
+     *             New values to add.
+     *
+     * @return This instance.
+     */
+    public function withOrders()
+    {
+        foreach (func_get_args() as $Orders)
+        {
+            $this->_fields['Orders']['FieldValue'][] = $Orders;
+        }
+        return $this;
     }
-
-
-
 
 }

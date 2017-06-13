@@ -1,26 +1,28 @@
 <?php
-/** 
- *  PHP Version 5
+/*******************************************************************************
+ * Copyright 2009-2017 Amazon Services. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
  *
- *  @category    Amazon
- *  @package     MarketplaceWebServiceOrders
- *  @copyright   Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  @link        http://aws.amazon.com
- *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
- *  @version     2011-01-01
- */
-/******************************************************************************* 
- * 
- *  Marketplace Web Service Orders PHP5 Library
- * 
+ * You may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * specific language governing permissions and limitations under the License.
+ *******************************************************************************
+ * PHP Version 5
+ * @category Amazon
+ * @package  Marketplace Web Service Orders
+ * @version  2013-09-01
+ * Library Version: 2017-02-22
+ * Generated: Thu Mar 02 12:41:08 UTC 2017
  */
 
 /**
  *  @see MarketplaceWebServiceOrders_Model
  */
-require_once ('MarketplaceWebServiceOrders/Model.php');  
 
-    
+require_once (dirname(__FILE__) . '/../Model.php');
+
 
 /**
  * MarketplaceWebServiceOrders_Model_Money
@@ -32,59 +34,58 @@ require_once ('MarketplaceWebServiceOrders/Model.php');
  * <li>Amount: string</li>
  *
  * </ul>
- */ 
-class MarketplaceWebServiceOrders_Model_Money extends MarketplaceWebServiceOrders_Model
-{
+ */
 
-    /**
-     * Construct new MarketplaceWebServiceOrders_Model_Money
-     * 
-     * @param mixed $data DOMElement or Associative Array to construct from. 
-     * 
-     * Valid properties:
-     * <ul>
-     * 
-     * <li>CurrencyCode: string</li>
-     * <li>Amount: string</li>
-     *
-     * </ul>
-     */
+ class MarketplaceWebServiceOrders_Model_Money extends MarketplaceWebServiceOrders_Model {
+
     public function __construct($data = null)
     {
-        $this->_fields = array (
-        'CurrencyCode' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Amount' => array('FieldValue' => null, 'FieldType' => 'string'),
-        );
-        parent::__construct($data);
+    $this->_fields = array (
+    'CurrencyCode' => array('FieldValue' => null, 'FieldType' => 'string'),
+    'Amount' => array('FieldValue' => null, 'FieldType' => 'string'),
+    );
+    parent::__construct($data);
     }
 
-        /**
-     * Gets the value of the CurrencyCode property.
-     * 
-     * @return string CurrencyCode
+    /**
+     * Get the value of the CurrencyCode property.
+     *
+     * @return String CurrencyCode.
      */
-    public function getCurrencyCode() 
+    public function getCurrencyCode()
     {
         return $this->_fields['CurrencyCode']['FieldValue'];
     }
 
     /**
-     * Sets the value of the CurrencyCode property.
-     * 
-     * @param string CurrencyCode
+     * Set the value of the CurrencyCode property.
+     *
+     * @param string currencyCode
      * @return this instance
      */
-    public function setCurrencyCode($value) 
+    public function setCurrencyCode($value)
     {
         $this->_fields['CurrencyCode']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the CurrencyCode and returns this instance
-     * 
-     * @param string $value CurrencyCode
-     * @return MarketplaceWebServiceOrders_Model_Money instance
+     * Check to see if CurrencyCode is set.
+     *
+     * @return true if CurrencyCode is set.
+     */
+    public function isSetCurrencyCode()
+    {
+                return !is_null($this->_fields['CurrencyCode']['FieldValue']);
+            }
+
+    /**
+     * Set the value of CurrencyCode, return this.
+     *
+     * @param currencyCode
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withCurrencyCode($value)
     {
@@ -92,63 +93,50 @@ class MarketplaceWebServiceOrders_Model_Money extends MarketplaceWebServiceOrder
         return $this;
     }
 
-
     /**
-     * Checks if CurrencyCode is set
-     * 
-     * @return bool true if CurrencyCode  is set
+     * Get the value of the Amount property.
+     *
+     * @return String Amount.
      */
-    public function isSetCurrencyCode()
-    {
-        return !is_null($this->_fields['CurrencyCode']['FieldValue']);
-    }
-
-    /**
-     * Gets the value of the Amount property.
-     * 
-     * @return string Amount
-     */
-    public function getAmount() 
+    public function getAmount()
     {
         return $this->_fields['Amount']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Amount property.
-     * 
-     * @param string Amount
+     * Set the value of the Amount property.
+     *
+     * @param string amount
      * @return this instance
      */
-    public function setAmount($value) 
+    public function setAmount($value)
     {
         $this->_fields['Amount']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Amount and returns this instance
-     * 
-     * @param string $value Amount
-     * @return MarketplaceWebServiceOrders_Model_Money instance
+     * Check to see if Amount is set.
+     *
+     * @return true if Amount is set.
+     */
+    public function isSetAmount()
+    {
+                return !is_null($this->_fields['Amount']['FieldValue']);
+            }
+
+    /**
+     * Set the value of Amount, return this.
+     *
+     * @param amount
+     *             The new value to set.
+     *
+     * @return This instance.
      */
     public function withAmount($value)
     {
         $this->setAmount($value);
         return $this;
     }
-
-
-    /**
-     * Checks if Amount is set
-     * 
-     * @return bool true if Amount  is set
-     */
-    public function isSetAmount()
-    {
-        return !is_null($this->_fields['Amount']['FieldValue']);
-    }
-
-
-
 
 }

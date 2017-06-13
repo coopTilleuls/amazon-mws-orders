@@ -11,4 +11,4 @@ Install [Composer](http://getcomposer.org/) and add amazon-mws-orders to your `c
 Version
 -------
 
-Current version is `amazon-mws-v20110101-php-2013-04-30._V369931664_`.
+Current version is `amazon-mws-v20130901`.
