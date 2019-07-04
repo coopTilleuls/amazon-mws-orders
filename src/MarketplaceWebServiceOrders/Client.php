@@ -382,7 +382,10 @@ class MarketplaceWebServiceOrders_Client implements MarketplaceWebServiceOrders_
      *
      * @param string $awsAccessKeyId AWS Access Key ID
      * @param string $awsSecretAccessKey AWS Secret Access Key
+     * @param string $applicationName Application Name for User-Agent header
+     * @param string $applicationVersion Application Version for User-Agent header
      * @param array $config configuration options.
+     *
      * Valid configuration options are:
      * <ul>
      * <li>ServiceURL</li>
